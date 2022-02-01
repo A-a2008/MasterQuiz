@@ -54,6 +54,14 @@ mark {
 	color: inherit;
 }
 
+.greenyellow {
+	background-color: greenyellow;
+}
+
+.orange {
+	background-color: #ffb84d;
+}
+
 input::-moz-focus-inner {
 	border: 0;
 	padding: 0;

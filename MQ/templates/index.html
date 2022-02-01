@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Master Quiz</title>
+		<title>EthicTest</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
@@ -16,9 +16,10 @@
 
 						<!-- Logo -->
 							<div id="logo">
-								<h1><a href="{% url 'home' %}">Master Quiz</a></h1>
-								<span>Create quizes on the go</span>
-							</div>
+								<h1><a href="{% url 'home' %}">EthicTest</a></h1>
+								<span>Restrict students from copying in exam</span>
+							</div>  
+							
 
 						<!-- Nav -->
 							<nav id="nav">
@@ -26,9 +27,12 @@
 									<li><a href="left-sidebar.html">Q&A</a></li>
 									<li><a href="left-sidebar.html">Feedback</a></li>
 									<li><a href="right-sidebar.html">About</a></li>
-									<li><a href="right-sidebar.html">Sign in or Register</a></li>
-									{% if user.is_ %}
+									{% if user.is_authenticated %}
 									<li><a href="no-sidebar.html">Log out</a></li>
+									{% else %}
+									<li><a href="{% url 'login' %}">Sign in</a></li>
+									<li><a href="{% url 'register' %}">Register</a></li>
+									{% endif %}
 								</ul>
 							</nav>
 
@@ -40,13 +44,18 @@
 					<div id="banner" class="box container">
 						<div class="row">
 							<div class="col-7 col-12-medium">
-								<h2><b>Hola, Master Quiz</b></h2>
-								<p><i>Your all in one place to make and launch quizes</i></p>
+								<h2><b><font color="#FF0000" face="Bookman Old style"><i>Hola, </i></font> from EthicTest</b></h2>
+								<!-- <p><i><font color="#64a300">Create</font> examination papers and <font color="#fc2200"><b>restrict
+									 students</b></font> from malpracticing during the exam
+								</i></p> -->
+								<p><i><mark class="orange"><b>Create</b></mark> examination papers and <mark class="greenyellow"><b>restrict
+									students</b></mark> from malpracticing during the exam
+							   </i></p>
 							</div>
 							<div class="col-5 col-12-medium">
 								<ul>
-									<li><a href="#" class="button large icon solid fa-arrow-circle-right">Create Quiz</a></li>
-									<li><a href="#" class="button large icon solid fa-arrow-circle-right">Join Quiz</a></li>
+									<li><a href="" class="button large icon solid fa-arrow-circle-right">Create Question Paper</a></li>
+									<li><a href="#" class="button large icon solid fa-arrow-circle-right">Join Test</a></li>
 								</ul>
 							</div>
 						</div>
@@ -64,7 +73,7 @@
 										<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
 										<div class="inner">
 											<header>
-												<p><i><b><center><font size="7">Add quiz and poll questions</font></center></b></i></p></p>
+												<p><i><b><center><font size="7">Add multiple choice and One word questions</font></center></b></i></p></p>
 											</header>
 										</div>
 										<a href="#" class="image featured"><img src="{% static 'images/quiz.png' %}" alt="" /></a>
@@ -77,10 +86,10 @@
 									<section class="box feature">
 										<div class="inner">
 											<header>
-												<p><i><b><center><font size="7">Participants engage from any device</font></center></b></i></p></p>
+												<p><i><b><center><font size="7">Restrict students from malpractices</font></center></b></i></p></p>
 											</header>
 										</div>
-										<a href="#" class="image featured"><img src="{% static 'images/multi-device.png' %}" alt="" /></a>
+										<a href="#" class="image featured"><img src="{% static 'images/blur_image.jpg' %}" alt="" /></a>
 									</section>
 
 							</div>
@@ -88,10 +97,9 @@
 
 								<!-- Box -->
 									<section class="box feature">
-										<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
 										<div class="inner">
 											<header>
-												<p><i><b><center><font size="7">Get instant feedback</font></center></b></i></p></p>
+												<p><i><b><center><font size="7">Get instant results,& Log reports</center><font></center></b></i></p></p>
 											</header>
 											<a href="#" class="image featured"><img src="{% static 'images/feedback.png' %}" alt="" /></a>
 										</div>

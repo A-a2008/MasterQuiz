@@ -6,3 +6,7 @@ from django.shortcuts import render
 def home(request):
     return render(request, "index.html")
 
+
+def test1(request):
+    return render(request, "base.html")
+

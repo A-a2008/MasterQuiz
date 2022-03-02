@@ -23,6 +23,25 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;}
 
+/* html {
+	overflow: auto;
+}
+
+html, body, div, iframe {
+	margin: 0px;
+	padding: 0px; 
+	height: 100%; 
+	border: none;
+}
+
+iframe {
+	display: block; 
+	width: 100%; 
+	border: none; 
+	overflow-y: auto; 
+	overflow-x: hidden;
+} */
+
 body {
 	line-height: 1;
 }
@@ -1497,6 +1516,7 @@ input, select, textarea {
 	}
 
 	form input[type="text"],
+	form input[type="url"],
 	form input[type="email"],
 	form input[type="password"],
 	form select,
@@ -1509,6 +1529,7 @@ input, select, textarea {
 	}
 
 		form input[type="text"]:focus,
+		form input[type="url"]:focus,
 		form input[type="email"]:focus,
 		form input[type="password"]:focus,
 		form select:focus,
@@ -1517,6 +1538,7 @@ input, select, textarea {
 		}
 
 	form input[type="text"],
+	form input[type="url"],
 	form input[type="email"],
 	form input[type="password"] {
 		line-height: 3em;

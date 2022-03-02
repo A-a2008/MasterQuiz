@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Create Paper</h2>
+    <form action="/create/" method="post">
+        {% csrf_token %}
+        Exam Name: <input type="text" name="ExamName" placeholder="Exam Name" required ><br />
+        Link: <input type="url" name="exam_link" placeholder="Google form exam link" required ><br />
+        Time Duration: <input type="text" name="duration" placeholder="In mins" required ><br />
+        <input type="submit" value="Create">
+        <input type="reset" value="Reset">
+    </form>
+
+{% endblock %}
